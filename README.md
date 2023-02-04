@@ -52,3 +52,8 @@ will do in the labs I will leave links to the series here
 2. Ray Tracing - https://www.youtube.com/watch?v=gfW1Fhd9u9Q&list=PLlrATfBNZ98edc5GshdBtREv5asFW3yXl
 He also has very good C++ series if you need to check something. He explains nearly
 every topic on C++ consise + examples there are I think over 100 videos.
+
+## How I structured the repo
+For one of my previous projects I found a very good openGL + glew + glm skeleton
+I will leave the link here. The setup is very much taken from there.
+`https://github.com/ArthurSonzogni/OpenGL_CMake_Skeleton`
