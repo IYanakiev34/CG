@@ -50,3 +50,5 @@ and is very good educator. He has series on openGL anddd ray tracing which we
 will do in the labs I will leave links to the series here
 1. OpenGL - https://www.youtube.com/watch?v=W3gAzLwfIP0&list=PLlrATfBNZ98foTJPJ_Ev03o2oq3-GGOS2
 2. Ray Tracing - https://www.youtube.com/watch?v=gfW1Fhd9u9Q&list=PLlrATfBNZ98edc5GshdBtREv5asFW3yXl
+He also has very good C++ series if you need to check something. He explains nearly
+every topic on C++ consise + examples there are I think over 100 videos.
