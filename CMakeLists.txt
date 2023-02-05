@@ -10,6 +10,11 @@ set(PROJECT_COMPILE_OPTIONS "-std=c++20 -g -O2 -Wall -Werror")
 
 add_executable(${PROJECT_NAME} src/main.cpp)
 
+if(MSVC)
+    target_compile_options(${PROJECT_NAME} PUBLIC "/ZI")
+    target_link_options(${PROJECT_NAME} PUBLIC "/INCREMENTAL")
+endif()
+
 target_compile_options(${PROJECT_NAME} PRIVATE ${PROJECT_COMPILE_OPTIONS})
 
 add_definitions(-DGLEW_STATIC)
