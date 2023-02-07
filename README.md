@@ -34,10 +34,6 @@ INTERFACE is used only when you link against libraries which are header only.
 Keep in mind a target can be an executable or even a library
 Those are the basic features you need to use cmake.
 
-## TODO
-- [ ] Add basic shader class
-- [ ] Create basic window to verify that everything is working
-
 ## Very good resources
 There is this guy on youtube TheCherno he was a professional game developer
 and is very good educator. He has series on openGL anddd ray tracing which we

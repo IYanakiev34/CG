@@ -27,13 +27,17 @@ qt_add_executable(OpenGL_0 WIN32 MACOSX_BUNDLE
     resources.qrc
 )
 
-target_include_directories(OpenGL_0 PRIVATE ${CMAKE_SOURCE_DIR})
+# TODO add include directories for binary dir + all qt directories
+target_include_directories(OpenGL_0 
+        PRIVATE ${CMAKE_SOURCE_DIR}
+        PRIVATE ${CMAKE_BINARY_DIR})
 
 target_link_libraries(OpenGL_0 PRIVATE
     Qt${QT_VERSION_MAJOR}::Widgets
     Qt${QT_VERSION_MAJOR}::OpenGL
     Qt${QT_VERSION_MAJOR}::OpenGLWidgets
 )
+
 
 # This is used for interoperability, do not remove even on linux;
 # On linux, result is an executable;
