@@ -25,12 +25,14 @@ qt_add_executable(OpenGL_0 WIN32 MACOSX_BUNDLE
     userinput.cpp
     main.cpp
     resources.qrc
+
 )
 
 # TODO add include directories for binary dir + all qt directories
 target_include_directories(OpenGL_0 
         PRIVATE ${CMAKE_SOURCE_DIR}
-        PRIVATE ${CMAKE_BINARY_DIR})
+        PRIVATE ${CMAKE_BINARY_DIR}
+    )
 
 target_link_libraries(OpenGL_0 PRIVATE
     Qt${QT_VERSION_MAJOR}::Widgets

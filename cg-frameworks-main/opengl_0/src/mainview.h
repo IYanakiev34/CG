@@ -37,7 +37,9 @@ class MainView : public QOpenGLWidget, protected QOpenGLFunctions_3_3_Core {
 
  private:
   QOpenGLDebugLogger debugLogger;
-
+  GLuint d_vao;
+  GLuint d_indexBuffer;
+  GLuint d_vertexBuffer;
  private slots:
   void onMessageLogged(QOpenGLDebugMessage Message);
 };
