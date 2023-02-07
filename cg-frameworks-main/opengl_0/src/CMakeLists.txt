@@ -28,6 +28,7 @@ qt_add_executable(OpenGL_0 WIN32 MACOSX_BUNDLE
 )
 
 target_include_directories(OpenGL_0 PRIVATE ${CMAKE_SOURCE_DIR})
+
 target_link_libraries(OpenGL_0 PRIVATE
     Qt${QT_VERSION_MAJOR}::Widgets
     Qt${QT_VERSION_MAJOR}::OpenGL

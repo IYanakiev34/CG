@@ -1,11 +1,5 @@
 # How to setup?
 
-1. `git clone --recurse-submodules git@github.com:IYanakiev34/CG.git`
-2. You need to have CMake installed or use `sudo apt install cmake -y`
-After this is done you should have the repository cloned and have access to 
-openGL because of glfw and glew which is the wrangler library. In order to run
-the project you need to naviagte to the build folder and type: `make`.
-
 ## Crash course on CMake
 CMake is a bild system which is highly more advanced than plain old make. The
 power of CMake is that it can generate different types of project files. For
@@ -52,8 +46,3 @@ will do in the labs I will leave links to the series here
 2. Ray Tracing - https://www.youtube.com/watch?v=gfW1Fhd9u9Q&list=PLlrATfBNZ98edc5GshdBtREv5asFW3yXl
 He also has very good C++ series if you need to check something. He explains nearly
 every topic on C++ consise + examples there are I think over 100 videos.
-
-## How I structured the repo
-For one of my previous projects I found a very good openGL + glew + glm skeleton
-I will leave the link here. The setup is very much taken from there.
-`https://github.com/ArthurSonzogni/OpenGL_CMake_Skeleton`
