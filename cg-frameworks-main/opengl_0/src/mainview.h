@@ -13,7 +13,7 @@
  * window. It inherits from QOpenGLWidget and QOpenGLFunctions_3_3_Core.
  */
 class MainView : public QOpenGLWidget, protected QOpenGLFunctions_3_3_Core {
-  Q_OBJECT
+    Q_OBJECT
 
  public:
   MainView(QWidget *parent = nullptr);
