@@ -8,7 +8,7 @@
  */
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow) {
-  ui->setupUi(this);
+    ui->setupUi(this);
 }
 
 /**
@@ -21,11 +21,11 @@ MainWindow::~MainWindow() { delete ui; }
  * @param checked Unused.
  */
 void MainWindow::on_ResetRotationButton_clicked(bool checked) {
-  Q_UNUSED(checked)
-  ui->RotationDialX->setValue(0);
-  ui->RotationDialY->setValue(0);
-  ui->RotationDialZ->setValue(0);
-  ui->mainView->setRotation(0, 0, 0);
+    Q_UNUSED(checked)
+    ui->RotationDialX->setValue(0);
+    ui->RotationDialY->setValue(0);
+    ui->RotationDialZ->setValue(0);
+    ui->mainView->setRotation(0, 0, 0);
 }
 
 /**
@@ -34,8 +34,8 @@ void MainWindow::on_ResetRotationButton_clicked(bool checked) {
  * @param value Unused.
  */
 void MainWindow::on_RotationDialX_sliderMoved(int value) {
-  ui->mainView->setRotation(value, ui->RotationDialY->value(),
-                            ui->RotationDialZ->value());
+    ui->mainView->setRotation(value, ui->RotationDialY->value(),
+                              ui->RotationDialZ->value());
 }
 
 /**
@@ -44,8 +44,8 @@ void MainWindow::on_RotationDialX_sliderMoved(int value) {
  * @param value Unused.
  */
 void MainWindow::on_RotationDialY_sliderMoved(int value) {
-  ui->mainView->setRotation(ui->RotationDialX->value(), value,
-                            ui->RotationDialZ->value());
+    ui->mainView->setRotation(ui->RotationDialX->value(), value,
+                              ui->RotationDialZ->value());
 }
 
 /**
@@ -54,8 +54,8 @@ void MainWindow::on_RotationDialY_sliderMoved(int value) {
  * @param value Unused.
  */
 void MainWindow::on_RotationDialZ_sliderMoved(int value) {
-  ui->mainView->setRotation(ui->RotationDialX->value(),
-                            ui->RotationDialY->value(), value);
+    ui->mainView->setRotation(ui->RotationDialX->value(),
+                              ui->RotationDialY->value(), value);
 }
 
 /**
@@ -63,9 +63,9 @@ void MainWindow::on_RotationDialZ_sliderMoved(int value) {
  * @param checked Unused.
  */
 void MainWindow::on_ResetScaleButton_clicked(bool checked) {
-  Q_UNUSED(checked)
-  ui->ScaleSlider->setValue(100);
-  ui->mainView->setScale(100);
+    Q_UNUSED(checked)
+    ui->ScaleSlider->setValue(100);
+    ui->mainView->setScale(100);
 }
 
 /**
@@ -73,7 +73,7 @@ void MainWindow::on_ResetScaleButton_clicked(bool checked) {
  * @param value The new scale value.
  */
 void MainWindow::on_ScaleSlider_sliderMoved(int value) {
-  ui->mainView->setScale(value / 100.0f);
+    ui->mainView->setScale(value / 100.0f);
 }
 
 /**
@@ -81,7 +81,7 @@ void MainWindow::on_ScaleSlider_sliderMoved(int value) {
  * DO NOT REMOVE OR MODIFY!
  */
 void MainWindow::renderToFile() {
-  QImage image = ui->mainView->grabFramebuffer();
-  image.save("framebuffer_contents.png", "PNG",
-             100);  // Save using the best quality
+    QImage image = ui->mainView->grabFramebuffer();
+    image.save("framebuffer_contents.png", "PNG",
+               100);  // Save using the best quality
 }
