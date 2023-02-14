@@ -68,8 +68,6 @@ void MainView::initializeGL() {
 
     // Creatye shader and get uniform locations
     createShaderProgram();
-    d_modLocation = shaderProgram.uniformLocation("modelMat");
-    d_projLocation = shaderProgram.uniformLocation("projMat");
 
     // Create pyramid
     createPyramid();
@@ -97,6 +95,9 @@ void MainView::createShaderProgram() {
                                           ":/shaders/fragshader.glsl");
 
     shaderProgram.link();
+
+    d_modLocation = shaderProgram.uniformLocation("modelMat");
+    d_projLocation = shaderProgram.uniformLocation("projMat");
 }
 
 /**
@@ -128,7 +129,6 @@ void MainView::paintGL() {
     // Draw knot
     glBindVertexArray(d_knotVAO);
     glDrawElements(GL_TRIANGLES,d_knotElements,GL_UNSIGNED_INT,nullptr);
-
     shaderProgram.release();
 }
 
@@ -203,29 +203,31 @@ void MainView::createPyramid()
     // Create vertex array buffer
     glGenBuffers(1,&d_pyrVBO);
     glBindBuffer(GL_ARRAY_BUFFER,d_pyrVBO);
-    glBufferData(GL_ARRAY_BUFFER,6*5*sizeof(float),vertData.data(),GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER,5*sizeof(MyVertex),vertData.data(),GL_STATIC_DRAW);
 
     // pyramid indices
     unsigned ind[]
     {
-        0,4,1,
-        1,4,2,
-        2,4,3,
-        0,3,4
+        0,2,1,
+        0,3,2,
+        4,3,0,
+        4,0,1,
+        4,1,2,
+        4,2,3
     };
-    d_pyrElements = 12;
+    d_pyrElements = 18;
 
     // Create and bind the IBO
     glGenBuffers(1,&d_pyrIBO);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,d_pyrIBO);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER,3*6*sizeof(unsigned),ind,GL_STATIC_DRAW);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER,d_pyrElements*sizeof(unsigned),ind,GL_STATIC_DRAW);
 
     // Create the vertex attributes
     glEnableVertexAttribArray(0);
-    glVertexAttribPointer(0,3,GL_FLOAT,GL_FALSE,6*sizeof(float),0);
+    glVertexAttribPointer(0,3,GL_FLOAT,GL_FALSE,sizeof(MyVertex),0);
 
     glEnableVertexAttribArray(1);
-    glVertexAttribPointer(1,3,GL_FLOAT,GL_FALSE,6*sizeof(float),(void *)(3*sizeof(float)));
+    glVertexAttribPointer(1,3,GL_FLOAT,GL_FALSE,sizeof(MyVertex),(void *)(sizeof(QVector3D)));
 
 
     // Initialize matrices for transformation

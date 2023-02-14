@@ -17,8 +17,6 @@ uniform mat4 modelMat;
 uniform mat4 projMat;
 
 void main() {
-  // gl_Position is the output (a vec4) of the vertex shader
-  // Currently without any transformation
   gl_Position = projMat * modelMat * vec4(vertCoordinates_in, 1.0F);
   vertColor = vertColor_in;
 }
