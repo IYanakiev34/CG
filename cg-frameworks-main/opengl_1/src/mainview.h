@@ -9,9 +9,9 @@
 #include <QOpenGLWidget>
 #include <QTimer>
 #include <QVector3D>
+#include <QVector>
 #include <QMatrix4x4>
 
-// #include "model.h"
 
 /**
  * @brief The MainView class is resonsible for the actual content of the main
@@ -20,11 +20,35 @@
 class MainView : public QOpenGLWidget, protected QOpenGLFunctions_3_3_Core {
     Q_OBJECT
 
-    unsigned VAO;
-    unsigned VBO;
-    unsigned IBO;
-    QMatrix4x4 d_model;
+    // Pyramid IBO VAO VBO
+    unsigned d_pyrVAO;
+    unsigned d_pyrVBO;
+    unsigned d_pyrIBO;
+
+    // Knot IBO VAO VBO
+    unsigned d_knotVAO;
+    unsigned d_knotIBO;
+    unsigned d_knotVBO;
+
+    // Pyr Model
+    QMatrix4x4 d_pyrModel;
+
+    // Reuse for both
+    QMatrix4x4 d_scale;
+    QMatrix4x4 d_rotation;
     QMatrix4x4 d_proj;
+
+    // Pyramid translation
+    QMatrix4x4 d_pyrTrans;
+
+    // Knot translation and Knot Model Matrix
+    QMatrix4x4 d_knotTrans;
+    QMatrix4x4 d_knotModel;
+
+    // Element amount
+    unsigned d_pyrElements;
+    unsigned d_knotElements;
+
     float d_aspectRatio;
     unsigned d_projLocation;
     unsigned d_modLocation;
@@ -63,6 +87,9 @@ private:
     QOpenGLShaderProgram shaderProgram;
 
     void createShaderProgram();
+
+    void createPyramid();
+    void createKnot();
 };
 
 #endif  // MAINVIEW_H

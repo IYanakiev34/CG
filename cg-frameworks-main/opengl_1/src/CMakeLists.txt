@@ -27,6 +27,7 @@ qt_add_executable(OpenGL_1 WIN32 MACOSX_BUNDLE
     model.cpp model.h
     vertex.h
     main.cpp
+    myvertex.h
 )
 
 target_include_directories(OpenGL_1 PRIVATE ${CMAKE_SOURCE_DIR})

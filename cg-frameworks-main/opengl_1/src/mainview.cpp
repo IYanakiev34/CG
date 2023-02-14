@@ -1,6 +1,8 @@
 #include "mainview.h"
 
 #include <QDateTime>
+#include "model.h"
+#include "myvertex.h"
 
 /**
  * @brief MainView::MainView Constructs a new main view.
@@ -25,9 +27,9 @@ MainView::~MainView() {
     qDebug() << "MainView destructor";
 
     makeCurrent();
-    glDeleteVertexArrays(1,&VAO);
-    glDeleteBuffers(1,&VBO);
-    glDeleteBuffers(1,&IBO);
+    glDeleteVertexArrays(1,&d_pyrVAO);
+    glDeleteBuffers(1,&d_pyrVBO);
+    glDeleteBuffers(1,&d_pyrIBO);
 }
 
 // --- OpenGL initialization
@@ -69,48 +71,17 @@ void MainView::initializeGL() {
     d_modLocation = shaderProgram.uniformLocation("modelMat");
     d_projLocation = shaderProgram.uniformLocation("projMat");
 
-    // Create the vertex array object and bind it
-    glGenVertexArrays(1,&VAO);
-    glBindVertexArray(VAO);
+    // Create pyramid
+    createPyramid();
 
-    // pyramid vertices
-    float vertData[] =
-    {
-        -1.f,1.f,1.f,1.f,0.f,0.f,
-        1.f,1.f,1.f,0.f,1.f,0.f,
-        1.f,-1.f,1.f,1.f,1.f,0.f,
-        -1.f,-1.f,1.f,0.f,0.f,1.f,
-        0.f,0.f,-1.f,1.f,0.f,1.f,
-    };
+    // Create knot
+    createKnot();
 
-    // Create vertex array buffer
-    glGenBuffers(1,&VBO);
-    glBindBuffer(GL_ARRAY_BUFFER,VBO);
-    glBufferData(GL_ARRAY_BUFFER,6*5*sizeof(float),vertData,GL_STATIC_DRAW);
+    // Initialize to identity the rotation and scaling matrices
+    d_rotation.setToIdentity();
+    d_scale.setToIdentity();
 
-    // pyramid indices
-    unsigned ind[]
-    {
-        0,4,1,
-        1,4,2,
-        2,4,3,
-        0,3,4
-    };
-    // Create and bind the IBO
-    glGenBuffers(1,&IBO);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,IBO);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER,3*6*sizeof(unsigned),ind,GL_STATIC_DRAW);
-
-    // Create the vertex attributes
-    glEnableVertexAttribArray(0);
-    glVertexAttribPointer(0,3,GL_FLOAT,GL_FALSE,6*sizeof(float),0);
-
-    glEnableVertexAttribArray(1);
-    glVertexAttribPointer(1,3,GL_FLOAT,GL_FALSE,6*sizeof(float),(void *)(3*sizeof(float)));
-
-
-    // Set up the model and projection matrices
-    d_model.translate(QVector3D(-2,0,-6));
+    // Set up projection matrix also constant for now so we can leave it here
     d_aspectRatio = (float) this->width() / (float) this->height();
     d_proj.perspective(60.f,d_aspectRatio,0.2f,20.f);
 }
@@ -138,14 +109,25 @@ void MainView::paintGL() {
 
     shaderProgram.bind();
 
+    // Set the model matrix
+    d_pyrModel = d_pyrTrans * d_rotation * d_scale;
+
     // Send the uniform matrices
-    glUniformMatrix4fv(d_modLocation,1,GL_FALSE,d_model.data());
+    glUniformMatrix4fv(d_modLocation,1,GL_FALSE,d_pyrModel.data());
     glUniformMatrix4fv(d_projLocation,1,GL_FALSE,d_proj.data());
 
-    // Draw here
-    glBindVertexArray(VAO);
-    // TODO: could fix magic number here
-    glDrawElements(GL_TRIANGLES,12,GL_UNSIGNED_INT,nullptr);
+    // Draw pyramid
+    glBindVertexArray(d_pyrVAO);
+    glDrawElements(GL_TRIANGLES,d_pyrElements,GL_UNSIGNED_INT,nullptr);
+
+    // Set the model matrix for the knot and send it to the GPU
+    d_knotModel = d_knotTrans * d_rotation * d_scale;
+    glUniformMatrix4fv(d_modLocation,1,GL_FALSE,d_knotModel.data());
+    glUniformMatrix4fv(d_projLocation,1,GL_FALSE,d_proj.data());
+
+    // Draw knot
+    glBindVertexArray(d_knotVAO);
+    glDrawElements(GL_TRIANGLES,d_knotElements,GL_UNSIGNED_INT,nullptr);
 
     shaderProgram.release();
 }
@@ -159,7 +141,6 @@ void MainView::paintGL() {
 void MainView::resizeGL(int newWidth, int newHeight) {
     // update aspect ratio
     d_aspectRatio = (float) newWidth / (float) newHeight;
-
     // update projection matrix
     QMatrix4x4 tmp;
     tmp.perspective(60,d_aspectRatio,0.2f,20.f);
@@ -173,9 +154,14 @@ void MainView::resizeGL(int newWidth, int newHeight) {
  * @param rotateZ Number of degrees to rotate around the z axis.
  */
 void MainView::setRotation(int rotateX, int rotateY, int rotateZ) {
-    qDebug() << "Rotation changed to (" << rotateX << "," << rotateY << ","
-             << rotateZ << ")";
-    Q_UNIMPLEMENTED();
+    QMatrix4x4 x_rot,y_rot,z_rot;
+    x_rot.rotate(rotateX,1,0,0);
+    y_rot.rotate(rotateY,0,1,0);
+    z_rot.rotate(rotateZ,0,0,1);
+
+    d_rotation = x_rot*y_rot*z_rot;
+
+    update();
 }
 
 /**
@@ -184,8 +170,10 @@ void MainView::setRotation(int rotateX, int rotateY, int rotateZ) {
  * mesh to its original size.
  */
 void MainView::setScale(float scale) {
-    qDebug() << "Scale changed to " << scale;
-    Q_UNIMPLEMENTED();
+    d_scale.setToIdentity();
+    d_scale.scale(scale);
+
+    update();
 }
 
 /**
@@ -195,4 +183,92 @@ void MainView::setScale(float scale) {
  */
 void MainView::onMessageLogged(QOpenGLDebugMessage Message) {
     qDebug() << " → Log:" << Message;
+}
+
+void MainView::createPyramid()
+{
+    // Create the vertex array object and bind it
+    glGenVertexArrays(1,&d_pyrVAO);
+    glBindVertexArray(d_pyrVAO);
+
+    // pyramid vertices
+    float vertData[] =
+    {
+        -1.f,1.f,1.f,1.f,0.f,0.f,
+        1.f,1.f,1.f,0.f,1.f,0.f,
+        1.f,-1.f,1.f,1.f,1.f,0.f,
+        -1.f,-1.f,1.f,0.f,0.f,1.f,
+        0.f,0.f,-1.f,1.f,0.f,1.f,
+    };
+
+    // Create vertex array buffer
+    glGenBuffers(1,&d_pyrVBO);
+    glBindBuffer(GL_ARRAY_BUFFER,d_pyrVBO);
+    glBufferData(GL_ARRAY_BUFFER,6*5*sizeof(float),vertData,GL_STATIC_DRAW);
+
+    // pyramid indices
+    unsigned ind[]
+    {
+        0,4,1,
+        1,4,2,
+        2,4,3,
+        0,3,4
+    };
+    d_pyrElements = 12;
+
+    // Create and bind the IBO
+    glGenBuffers(1,&d_pyrIBO);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,d_pyrIBO);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER,3*6*sizeof(unsigned),ind,GL_STATIC_DRAW);
+
+    // Create the vertex attributes
+    glEnableVertexAttribArray(0);
+    glVertexAttribPointer(0,3,GL_FLOAT,GL_FALSE,6*sizeof(float),0);
+
+    glEnableVertexAttribArray(1);
+    glVertexAttribPointer(1,3,GL_FLOAT,GL_FALSE,6*sizeof(float),(void *)(3*sizeof(float)));
+
+
+    // Initialize matrices for transformation
+    d_pyrTrans.translate(QVector3D(-2,0,-6));
+}
+
+void MainView::createKnot()
+{
+    // Create vertex array object for the knot
+    glGenVertexArrays(1,&d_knotVAO);
+    glBindVertexArray(d_knotVAO);
+
+    // Create the model
+    Model knotModel(":/models/knot.obj");
+    QVector<QVector3D> knotVerts = knotModel.getVertices_indexed();
+
+    QVector<MyVertex> verts;
+    verts.reserve(knotVerts.size());
+
+    // Convert to my vertex format
+    for (std::size_t idx = 0; idx != knotVerts.size(); ++idx)
+        verts.append(MyVertex(QVector3D(knotVerts[idx]),QVector3D(abs(knotVerts[idx].x()),abs(knotVerts[idx].y()),abs(knotVerts[idx].z()))));
+
+
+    // Create the VBO
+    glGenBuffers(1,&d_knotVBO);
+    glBindBuffer(GL_ARRAY_BUFFER,d_knotVBO);
+    glBufferData(GL_ARRAY_BUFFER,verts.size() * sizeof(MyVertex),verts.data(),GL_STATIC_DRAW);
+
+    // Create IBO
+    d_knotElements = knotModel.getIndices().size();
+    glGenBuffers(1,&d_knotIBO);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,d_knotIBO);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER,knotModel.getIndices().size() * sizeof(unsigned),knotModel.getIndices().data(),GL_STATIC_DRAW);
+
+    // Enable attributes
+    glEnableVertexAttribArray(0);
+    glVertexAttribPointer(0,3,GL_FLOAT,GL_FALSE, sizeof(MyVertex),0);
+
+    glEnableVertexAttribArray(1);
+    glVertexAttribPointer(1,3,GL_FLOAT,GL_FALSE,sizeof(MyVertex),(void *)(sizeof(QVector3D)));
+
+    // Set up the translation of the knot
+    d_knotTrans.translate(QVector3D(2,0,-6));
 }
