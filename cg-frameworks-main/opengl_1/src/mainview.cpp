@@ -192,19 +192,18 @@ void MainView::createPyramid()
     glBindVertexArray(d_pyrVAO);
 
     // pyramid vertices
-    float vertData[] =
-    {
-        -1.f,1.f,1.f,1.f,0.f,0.f,
-        1.f,1.f,1.f,0.f,1.f,0.f,
-        1.f,-1.f,1.f,1.f,1.f,0.f,
-        -1.f,-1.f,1.f,0.f,0.f,1.f,
-        0.f,0.f,-1.f,1.f,0.f,1.f,
-    };
+    QVector<MyVertex> vertData;
+    vertData.reserve(5);
+    vertData.append(MyVertex(QVector3D(-1.f,1.f,1.f),QVector3D(1.f,0.f,0.f)));
+    vertData.append(MyVertex(QVector3D(1.f,1.f,1.f),QVector3D(0.f,1.f,0.f)));
+    vertData.append(MyVertex(QVector3D(1.f,-1.f,1.f),QVector3D(1.f,1.f,0.f)));
+    vertData.append(MyVertex(QVector3D(-1.f,-1.f,1.f),QVector3D(0.f,0.f,1.f)));
+    vertData.append(MyVertex(QVector3D(0.f,0.f,-1.f),QVector3D(1.f,0.f,1.f)));
 
     // Create vertex array buffer
     glGenBuffers(1,&d_pyrVBO);
     glBindBuffer(GL_ARRAY_BUFFER,d_pyrVBO);
-    glBufferData(GL_ARRAY_BUFFER,6*5*sizeof(float),vertData,GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER,6*5*sizeof(float),vertData.data(),GL_STATIC_DRAW);
 
     // pyramid indices
     unsigned ind[]
