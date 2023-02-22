@@ -1,0 +1,1547 @@
+{
+    "Eye": [200, 200, 100],
+    "Lights": [
+        {
+            "position": [-200, 600, 1500],
+            "color": [1.0, 1.0, 1.0]
+        },
+        {
+            "position": [200, 900, -100],
+            "color": [1.0, 1.0, 1.0]
+        },
+        {
+            "position": [200, 900, -1000],
+            "color": [1.0, 1.0, 1.0]
+        },
+        {
+            "position": [200, 900, -1900],
+            "color": [1.0, 1.0, 1.0]
+        }
+    ],
+    "Objects": [
+
+	    {
+            "type": "cylinder",
+            "position": [-100, -20, -20],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [-100, -20, -70],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [-100, -20, -120],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [-100, -20, -170],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [-100, -20, -220],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [-100, -20, -270],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [-100, -20, -320],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [-100, -20, -370],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [-100, -20, -420],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [-100, -20, -470],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [-100, -20, -520],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [-100, -20, -570],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [-100, -20, -620],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [-100, -20, -670],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [-100, -20, -720],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [-100, -20, -770],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [-100, -20, -820],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [-100, -20, -870],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [-100, -20, -920],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [-100, -20, -970],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [-100, -20, -1020],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [-100, -20, -1070],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [-100, -20, -1120],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [-100, -20, -1170],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [-100, -20, -1220],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [-100, -20, -1270],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [-100, -20, -1320],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [-100, -20, -1370],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [-100, -20, -1420],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [-100, -20, -1470],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [-100, -20, -1520],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [-100, -20, -1570],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [-100, -20, -1620],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [-100, -20, -1670],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [-100, -20, -1720],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [-100, -20, -1770],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [-100, -20, -1820],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [-100, -20, -1870],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [-100, -20, -1920],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [-100, -20, -1970],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [-100, -20, -2020],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [-100, -20, -2070],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [-100, -20, -2120],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [-100, -20, -2170],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [-100, -20, -2220],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [-100, -20, -2270],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [-100, -20, -2320],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [-100, -20, -2370],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [-100, -20, -2420],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [-100, -20, -2470],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [500, -20, -20],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [500, -20, -70],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [500, -20, -120],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [500, -20, -170],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [500, -20, -220],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [500, -20, -270],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [500, -20, -320],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [500, -20, -370],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [500, -20, -420],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [500, -20, -470],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [500, -20, -520],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [500, -20, -570],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [500, -20, -620],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [500, -20, -670],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [500, -20, -720],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [500, -20, -770],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [500, -20, -820],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [500, -20, -870],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [500, -20, -920],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [500, -20, -970],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [500, -20, -1020],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [500, -20, -1070],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [500, -20, -1120],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [500, -20, -1170],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [500, -20, -1220],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [500, -20, -1270],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [500, -20, -1320],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [500, -20, -1370],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [500, -20, -1420],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [500, -20, -1470],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [500, -20, -1520],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [500, -20, -1570],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [500, -20, -1620],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [500, -20, -1670],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [500, -20, -1720],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [500, -20, -1770],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [500, -20, -1820],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [500, -20, -1870],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [500, -20, -1920],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [500, -20, -1970],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [500, -20, -2020],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [500, -20, -2070],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [500, -20, -2120],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [500, -20, -2170],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [500, -20, -2220],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [500, -20, -2270],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [500, -20, -2320],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [500, -20, -2370],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [500, -20, -2420],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	    {
+            "type": "cylinder",
+            "position": [500, -20, -2470],
+            "direction": [0.0, 1000.0, 0.0],
+            "radius": 12,
+            "material":
+            {
+                "color": [0.9, 0.9, 0.9],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+{
+            "type": "quad",
+            "v0": [-120, 0, 0],
+            "v1": [520, 0, 0],
+            "v2": [520, 0, -2500],
+            "v3": [-120, 0, -2500],
+            "material":
+            {
+                "color": [0.1, 0.1, 0.1],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.1,
+                "n": 2
+            }
+        },
+{
+            "type": "quad",
+            "v0": [-120, 1000, 0],
+            "v1": [520, 1000, 0],
+            "v2": [520, 1000, -2500],
+            "v3": [-120, 1000, -2500],
+            "material":
+            {
+                "color": [1.0, 1.0, 1.0],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 5
+            }
+        },
+	{
+	            "type": "sphere",
+	            "position": [0, 25, -50],
+	            "radius": 25,
+	            "material":
+	            {
+	                "color": [1.000000, 0.000000, 0.000000],
+	                "ka": 0.3,
+	                "kd": 0.7,
+	                "ks": 1.0,
+	                "n": 10
+	            }
+	        },
+	{
+	            "type": "sphere",
+	            "position": [80, 25, -50],
+	            "radius": 25,
+	            "material":
+	            {
+	                "color": [1.000000, 1.000000, 0.000000],
+	                "ka": 0.3,
+	                "kd": 0.7,
+	                "ks": 1.0,
+	                "n": 10
+	            }
+	        },
+	{
+	            "type": "sphere",
+	            "position": [160, 25, -50],
+	            "radius": 25,
+	            "material":
+	            {
+	                "color": [0.000000, 1.000000, 0.000000],
+	                "ka": 0.3,
+	                "kd": 0.7,
+	                "ks": 1.0,
+	                "n": 10
+	            }
+	        },
+	{
+	            "type": "sphere",
+	            "position": [240, 25, -50],
+	            "radius": 25,
+	            "material":
+	            {
+	                "color": [0.000000, 1.000000, 1.000000],
+	                "ka": 0.3,
+	                "kd": 0.7,
+	                "ks": 1.0,
+	                "n": 10
+	            }
+	        },
+	{
+	            "type": "sphere",
+	            "position": [320, 25, -50],
+	            "radius": 25,
+	            "material":
+	            {
+	                "color": [0.000000, 0.000000, 1.000000],
+	                "ka": 0.3,
+	                "kd": 0.7,
+	                "ks": 1.0,
+	                "n": 10
+	            }
+	        },
+	{
+	            "type": "sphere",
+	            "position": [400, 25, -50],
+	            "radius": 25,
+	            "material":
+	            {
+	                "color": [1.000000, 0.000000, 1.000000],
+	                "ka": 0.3,
+	                "kd": 0.7,
+	                "ks": 1.0,
+	                "n": 10
+	            }
+	        },
+{
+            "type": "mesh",
+            "filename": "../models/cube.obj",
+            "position": [200, 50, -200],
+            "rotation": [45.0, 0.0, 0.0],
+            "scale": [50.0, 50.0, 50.0],
+            "material":
+            {
+                "color": [0.1, 0.1, 0.1],
+                "ka": 0.3,
+                "kd": 0.7,
+                "ks": 0.0,
+                "n": 1
+            }
+        }
+    ]
+}

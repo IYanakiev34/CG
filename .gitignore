@@ -1,2 +1,5 @@
 ./cg-frameworks-main/open*/build*/**
 ./build/**
+./book_summary
+./cg-frameworks-main/raytracer_1/*.zip
+

@@ -12,6 +12,8 @@
 #include <QVector>
 #include <QMatrix4x4>
 
+#include "camera.h"
+
 
 /**
  * @brief The MainView class is resonsible for the actual content of the main
@@ -36,7 +38,6 @@ class MainView : public QOpenGLWidget, protected QOpenGLFunctions_3_3_Core {
     // Reuse for both
     QMatrix4x4 d_scale;
     QMatrix4x4 d_rotation;
-    QMatrix4x4 d_proj;
 
     // Pyramid translation
     QMatrix4x4 d_pyrTrans;
@@ -49,9 +50,14 @@ class MainView : public QOpenGLWidget, protected QOpenGLFunctions_3_3_Core {
     unsigned d_pyrElements;
     unsigned d_knotElements;
 
-    float d_aspectRatio;
     unsigned d_projLocation;
     unsigned d_modLocation;
+
+    // Camera
+    Camera d_camera;
+
+    // Delta time
+    float d_deltaTime;
 
 public:
     MainView(QWidget *parent = nullptr);
@@ -90,6 +96,7 @@ private:
 
     void createPyramid();
     void createKnot();
+    void createCamera();
 };
 
 #endif  // MAINVIEW_H

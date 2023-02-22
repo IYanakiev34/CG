@@ -27,10 +27,19 @@ MainView::~MainView() {
     qDebug() << "MainView destructor";
 
     makeCurrent();
+
+    // Pyramid buffers
     glDeleteVertexArrays(1,&d_pyrVAO);
     glDeleteBuffers(1,&d_pyrVBO);
     glDeleteBuffers(1,&d_pyrIBO);
+
+    // Knot buffers
+    glDeleteVertexArrays(1,&d_knotVAO);
+    glDeleteBuffers(1,&d_knotVBO);
+    glDeleteBuffers(1,&d_knotIBO);
+
 }
+
 
 // --- OpenGL initialization
 
@@ -55,33 +64,23 @@ void MainView::initializeGL() {
 
     // Enable depth buffer
     glEnable(GL_DEPTH_TEST);
-
     // Enable backface culling
     glEnable(GL_CULL_FACE);
-
     // Default is GL_LESS
     glDepthFunc(GL_LEQUAL);
-
-    // Set the color to be used by glClear. This is, effectively, the background
-    // color.
     glClearColor(0.37f, 0.42f, 0.45f, 0.0f);
 
+    createCamera();
     // Creatye shader and get uniform locations
     createShaderProgram();
-
     // Create pyramid
     createPyramid();
-
     // Create knot
     createKnot();
 
     // Initialize to identity the rotation and scaling matrices
     d_rotation.setToIdentity();
     d_scale.setToIdentity();
-
-    // Set up projection matrix also constant for now so we can leave it here
-    d_aspectRatio = (float) this->width() / (float) this->height();
-    d_proj.perspective(60.f,d_aspectRatio,0.2f,20.f);
 }
 
 /**
@@ -96,7 +95,7 @@ void MainView::createShaderProgram() {
 
     shaderProgram.link();
 
-    d_modLocation = shaderProgram.uniformLocation("modelMat");
+    d_modLocation = shaderProgram.uniformLocation("modelView");
     d_projLocation = shaderProgram.uniformLocation("projMat");
 }
 
@@ -112,10 +111,10 @@ void MainView::paintGL() {
 
     // Set the model matrix
     d_pyrModel = d_pyrTrans * d_rotation * d_scale;
-
     // Send the uniform matrices
-    glUniformMatrix4fv(d_modLocation,1,GL_FALSE,d_pyrModel.data());
-    glUniformMatrix4fv(d_projLocation,1,GL_FALSE,d_proj.data());
+
+    glUniformMatrix4fv(d_modLocation,1,GL_FALSE,(d_camera.getView() * d_pyrModel).data());
+    glUniformMatrix4fv(d_projLocation,1,GL_FALSE,d_camera.getProjection().data());
 
     // Draw pyramid
     glBindVertexArray(d_pyrVAO);
@@ -123,13 +122,15 @@ void MainView::paintGL() {
 
     // Set the model matrix for the knot and send it to the GPU
     d_knotModel = d_knotTrans * d_rotation * d_scale;
-    glUniformMatrix4fv(d_modLocation,1,GL_FALSE,d_knotModel.data());
-    glUniformMatrix4fv(d_projLocation,1,GL_FALSE,d_proj.data());
+
+    glUniformMatrix4fv(d_modLocation,1,GL_FALSE,(d_camera.getView() * d_knotModel).data());
+    glUniformMatrix4fv(d_projLocation,1,GL_FALSE,d_camera.getProjection().data());
 
     // Draw knot
     glBindVertexArray(d_knotVAO);
     glDrawElements(GL_TRIANGLES,d_knotElements,GL_UNSIGNED_INT,nullptr);
     shaderProgram.release();
+
 }
 
 /**
@@ -139,12 +140,7 @@ void MainView::paintGL() {
  * @param newHeight The new height of the screen in pixels.
  */
 void MainView::resizeGL(int newWidth, int newHeight) {
-    // update aspect ratio
-    d_aspectRatio = (float) newWidth / (float) newHeight;
-    // update projection matrix
-    QMatrix4x4 tmp;
-    tmp.perspective(60,d_aspectRatio,0.2f,20.f);
-    d_proj = tmp;
+    d_camera.setAspectRatio(float(newWidth)/float(newHeight));
 }
 
 /**
@@ -272,4 +268,9 @@ void MainView::createKnot()
 
     // Set up the translation of the knot
     d_knotTrans.translate(QVector3D(2,0,-6));
+}
+
+void MainView::createCamera()
+{
+    d_camera = Camera(60,(float)this->width()/ (float) this->height(),0.2f,20.f,QVector3D(0,0,-1.f));
 }

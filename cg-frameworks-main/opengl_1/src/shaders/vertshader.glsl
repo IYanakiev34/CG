@@ -13,10 +13,10 @@ layout(location = 1) in vec3 vertColor_in;
 // Specify the output of the vertex stage
 out vec3 vertColor;
 
-uniform mat4 modelMat;
+uniform mat4 modelView;
 uniform mat4 projMat;
 
 void main() {
-  gl_Position = projMat * modelMat * vec4(vertCoordinates_in, 1.0F);
+  gl_Position = projMat * modelView * vec4(vertCoordinates_in, 1.0F);
   vertColor = vertColor_in;
 }
